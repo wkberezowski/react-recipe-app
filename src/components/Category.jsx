@@ -18,9 +18,9 @@ function Category() {
         <GiNoodles />
         <h4>Thai</h4>
       </SLink>
-      <SLink to={'/cuisine/Japanese'}>
+      <SLink to={'/cuisine/Korean'}>
         <GiChopsticks />
-        <h4>Japanese</h4>
+        <h4>Korean</h4>
       </SLink>
     </List>
   );
