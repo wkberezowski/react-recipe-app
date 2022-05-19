@@ -6,7 +6,7 @@ import React from 'react';
 
 function Recipe() {
   let params = useParams();
-  const [details, setDetails] = useState();
+  const [details, setDetails] = useState({});
   const [activeTab, setActiveTab] = useState('instructions');
 
   const fetchDetails = async () => {
@@ -19,17 +19,17 @@ function Recipe() {
       },
     };
     const api = await fetch(
-      `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${params.id}/information`,
+      `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${params.name}/information`,
       options
     );
-    console.log('params.id' + params.id);
+
     const detailData = await api.json();
     setDetails(detailData);
   };
 
   useEffect(() => {
     fetchDetails();
-  }, [params.id]);
+  }, [params.name]);
 
   return (
     <DetailWrapper>
